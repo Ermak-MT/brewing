@@ -4,7 +4,6 @@ local modpath, S = ...
 armor:register_armor("brewing:magic_helmet", {
 	description = S("Magic Helmet"),
 	inventory_image = "brewing_magic_helmet_inv.png",
-	texture = "brewing_magic_helmet.png",
 	preview = "brewing_magic_helmet_preview.png",
 	groups = {armor_head=1, armor_use=500, flammable=0},
 	armor_groups = {fleshy=10, radiation=10},
@@ -26,7 +25,6 @@ armor:register_armor("brewing:magic_helmet", {
 armor:register_armor("brewing:magic_chestplate", {
 	description = S("Magic Chestplate"),
 	inventory_image = "brewing_magic_chestplate_inv.png",
-	texture = "brewing_magic_chestplate.png",
 	preview = "brewing_magic_chestplate_preview.png",
 	groups = {armor_torso=1, armor_use=500, flammable=0},
 	armor_groups = {fleshy=10, radiation=10},
@@ -48,7 +46,6 @@ armor:register_armor("brewing:magic_chestplate", {
 armor:register_armor("brewing:magic_leggins", {
 	description = S("Magic Leggins"),
 	inventory_image = "brewing_magic_leggins_inv.png",
-	texture = "brewing_magic_leggins.png",
 	preview = "brewing_magic_leggins_preview.png",
 	groups = {armor_legs=1, armor_use=500, flammable=0},
 	armor_groups = {fleshy=10, radiation=10},
@@ -70,7 +67,6 @@ armor:register_armor("brewing:magic_leggins", {
 armor:register_armor("brewing:magic_boots", {
 	description = S("Magic Boots"),
 	inventory_image = "brewing_magic_boots_inv.png",
-	texture = "brewing_magic_boots.png",
 	preview = "brewing_magic_boots_preview.png",
 	groups = {armor_feet=1, armor_use=500, flammable=0},
 	armor_groups = {fleshy=10, radiation=10},

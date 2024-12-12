@@ -10,7 +10,7 @@ minetest.register_craftitem("brewing:vial", {
 minetest.register_craft( {
 	output = "brewing:vial 10",
 	recipe = {
-		{"", "cork:cork", ""},
+		{"", "group:wood", ""},
 		{"", "default:glass", ""},
 		{"", "default:glass", ""}
 	}
@@ -26,7 +26,7 @@ minetest.register_craftitem("brewing:jar", {
 minetest.register_craft( {
 	output = "brewing:jar 10",
 	recipe = {
-		{"", "cork:cork", ""},
+		{"", "group:wood", ""},
 		{"default:glass", "", "default:glass"},
 		{"default:glass", "default:glass", "default:glass"}
 	}
