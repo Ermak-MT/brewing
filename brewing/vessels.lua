@@ -7,12 +7,12 @@ minetest.register_craftitem("brewing:vial", {
 	inventory_image = "brewing_vial.png",
 })
 
-minetest.register_craft( {
+minetest.register_craft({
 	output = "brewing:vial 10",
 	recipe = {
-		{"", "group:wood", ""},
+		{"", "brewing:sugarcane", ""},
 		{"", "default:glass", ""},
-		{"", "default:glass", ""}
+		{"", "default:glass", ""},
 	}
 })
 
@@ -23,11 +23,11 @@ minetest.register_craftitem("brewing:jar", {
 	inventory_image = "brewing_jar.png",
 })
 
-minetest.register_craft( {
+minetest.register_craft({
 	output = "brewing:jar 10",
 	recipe = {
-		{"", "group:wood", ""},
+		{"", "brewing:sugarcane", ""},
 		{"default:glass", "", "default:glass"},
-		{"default:glass", "default:glass", "default:glass"}
+		{"default:glass", "default:glass", "default:glass"},
 	}
 })

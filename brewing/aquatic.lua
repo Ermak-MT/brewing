@@ -88,9 +88,7 @@ minetest.register_node("brewing:pearl_oyster", {
 minetest.register_craft( {
 	output = "brewing:pearl",
 	recipe = {
-		{"", "", ""},
-		{"", "", ""},
-		{"", "brewing:pearl_oyster", ""}
+		{"brewing:pearl_oyster"}
 	}
 })
 
@@ -107,6 +105,13 @@ if mg_name ~= "v6" and mg_name ~= "singlenode" and brewing.generate_anemon == tr
 			height = 1,
 		})
 end
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 3,
+	output = "brewing:magic_crystal",
+	recipe = "brewing:anemon",
+})
 
 minetest.register_node("brewing:anemon", {
 	description = S("Anemon"),

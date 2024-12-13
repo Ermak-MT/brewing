@@ -65,7 +65,7 @@ minetest.register_node("brewing:magic_block", {
 minetest.register_craft({
 	output = '"brewing:magic_crystal_piece" 3',
 	recipe = {
-		{'brewing:magic_crystal'}
+		{'brewing:magic_crystal'},
 	}
 })
 
@@ -73,7 +73,7 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'brewing:magic_dust',
 	recipe = {
-		{'brewing:magic_crystal_piece'}
+		{'brewing:magic_crystal_piece'},
 	}
 })
 
@@ -81,9 +81,8 @@ minetest.register_craft({
 minetest.register_craft({
 	output = '"brewing:magic_block" 4',
 	recipe = {
-		{'brewing:magic_crystal', 'brewing:magic_crystal', ''},
-		{'brewing:magic_crystal', 'brewing:magic_crystal', ''},
-		{'', '', ''}
+		{"", "brewing:magic_crystal"},
+		{"brewing:magic_crystal", "brewing:magic_crystal"},
 	}
 })
 

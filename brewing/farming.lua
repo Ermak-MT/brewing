@@ -54,6 +54,13 @@ minetest.register_craft({
 	}
 })
 
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 3,
+	output = "brewing:magic_dust",
+	recipe = "brewing:magic_rose_petals",
+})
+
 --Rose Vase
 
 minetest.register_node("brewing:magic_rose_vase", {
@@ -177,6 +184,16 @@ minetest.register_craft({
 	cooktime = 3,
 	output = "brewing:sugar 5",
 	recipe = "brewing:sugarcane",
+})
+
+minetest.register_craft({
+	type = "shaped",
+	output = '"brewing:sugarcane" 3',
+	recipe = {
+		{"", "default:jungleleaves", ""},
+		{"default:jungleleaves", "brewing:magic_dust", "default:jungleleaves"},
+		{"default:stick", "default:stick", "default:stick"},
+	}
 })
 
 minetest.register_alias("brewing:sugar", "farming:sugar")
