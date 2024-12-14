@@ -33,10 +33,10 @@ mobs:register_mob("brewing:siren", {
 	fly_in = "default:water_source",
 	drops = {
 		--Very rare
-		{name = "brewing:pearl", chance = 20, min = 1, max = 3},
+		{name = "brewing:pearl", chance = 20, min = 1, max = 1},
 		--Rare
-		{name = "brewing:anemon", chance = 10, min = 1, max = 1},
-		{name = "brewing:turtle_shell", chance = 10, min = 1, max = 1},
+		{name = "brewing:anemon", chance = 5, min = 1, max = 1},
+		{name = "brewing:turtle_shell", chance = 5, min = 1, max = 1},
 	},
 	fall_speed = -1,
 	floats = 1,

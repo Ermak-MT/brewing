@@ -51,9 +51,9 @@ minetest.register_craft({
 	type = "shaped",
 	output = "brewing:lemonade",
 	recipe = {
-		{"lemontree:lemon"},
-		{"brewing:sugar"},
-		{"vessels:drinking_glass"},
+		{"", "lemontree:lemon", ""},
+		{"", "brewing:sugar", ""},
+		{"", "vessels:drinking_glass", ""},
 	}
 })
 
@@ -84,9 +84,9 @@ minetest.register_craft({
 	type = "shaped",
 	output = "brewing:lemon_pie_dough",
 	recipe = {
-		{"brewing:sugar"},
-		{"farming:flour"},
-		{"brewing:lemonade"},
+		{"", "brewing:sugar", ""},
+		{"", "farming:flour", ""},
+		{"", "brewing:lemonade", ""},
 	}
 })
 
@@ -108,6 +108,7 @@ minetest.register_craft({
 	type = "shaped",
 	output = "brewing:fay_cake",
 	recipe = {
+		{"", "", ""},
 		{"brewing:lemon", "brewing:artic_carrot", "brewing:sugar"},
 		{"", "farming:flour", ""},
 	}
@@ -131,6 +132,7 @@ minetest.register_craft({
 	type = "shaped",
 	output = "brewing:nymph_salad",
 	recipe = {
+		{"", "", ""},
 		{"flowers:mushroom_brown", "brewing:lemon", "brewing:mint"},
 		{"", "brewing:clay_bowl", ""},
 	}
@@ -173,21 +175,22 @@ if (minetest.get_modpath("crops") ~= nil) and (minetest.get_modpath("food")) ~= 
 		type = "shaped",
 		output = "brewing:unbaked_clay_bowl",
 		recipe = {
-			{"default:clay_lump", "", "default:clay_lump"},
-			{"", "default:clay_lump", ""},
+			{ "", "", "" },
+			{ "default:clay_lump", "", "default:clay_lump" },
+			{ "", "default:clay_lump", "" }
 		}
 	})
 
 	minetest.register_craftitem("brewing:clay_bowl", {
 		description = S("Clay Bowl"),
 		inventory_image = "brewing_clay_bowl.png",
-		groups = {food_bowl=1}
+		groups = {food_bowl=1 }
 	})
 
 	minetest.register_craft({
 		type = "cooking",
 		output = "crops:clay_bowl",
-		recipe = "crops:brewing_clay_bowl",
+		recipe = "crops:brewing_clay_bowl"
 	})
 end
 

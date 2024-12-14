@@ -469,11 +469,12 @@ minetest.register_craftitem("brewing:gerbera_oil", {
 	inventory_image = "brewing_gerbera_oil.png",
 })
 
-minetest.register_craft({
+minetest.register_craft( {
 	output = "brewing:gerbera_oil",
 	recipe = {
-		{"brewing:gerbera_daisy"},
-		{"brewing:vial"},
+		{"", "", ""},
+		{"", "brewing:gerbera_daisy", ""},
+		{"", "brewing:vial", ""}
 	}
 })
 
@@ -484,11 +485,12 @@ minetest.register_craftitem("brewing:mint_juice", {
 	inventory_image = "brewing_mint_juice.png",
 })
 
-minetest.register_craft({
+minetest.register_craft( {
 	output = "brewing:mint_juice",
 	recipe = {
-		{"brewing:mint_leaves"},
-		{"brewing:vial"},
+		{"", "", ""},
+		{"", "brewing:mint_leaves", ""},
+		{"", "brewing:vial", ""}
 	}
 })
 
@@ -499,10 +501,12 @@ minetest.register_craftitem("brewing:mint_leaves", {
 	inventory_image = "brewing_mint_leaves.png",
 })
 
-minetest.register_craft({
+minetest.register_craft( {
 	output = "brewing:mint_leaves 5",
 	recipe = {
-		{"brewing:mint"},
+		{"", "", ""},
+		{"", "", ""},
+		{"", "brewing:mint", ""}
 	}
 })
 
@@ -513,11 +517,12 @@ minetest.register_craftitem("brewing:fire_essence", {
 	inventory_image = "brewing_fire_essence.png",
 })
 
-minetest.register_craft({
+minetest.register_craft( {
 	output = "brewing:fire_essence",
 	recipe = {
-		{"brewing:fire_flower"},
-		{"brewing:jar"},
+		{"", "", ""},
+		{"", "brewing:fire_flower", ""},
+		{"", "brewing:jar", ""}
 	}
 })
 
@@ -528,11 +533,12 @@ minetest.register_craftitem("brewing:saffron", {
 	inventory_image = "brewing_saffron.png",
 })
 
-minetest.register_craft({
+minetest.register_craft( {
 	output = "brewing:saffron",
 	recipe = {
-		{"brewing:saffron_crocus"},
-		{"default:paper"},
+		{"", "", ""},
+		{"", "brewing:saffron_crocus", ""},
+		{"", "default:paper", ""}
 	}
 })
 
@@ -543,10 +549,11 @@ minetest.register_craftitem("brewing:cortinarius_poison", {
 	inventory_image = "brewing_cortinarius_poison.png",
 })
 
-minetest.register_craft({
+minetest.register_craft( {
 	output = "brewing:cortinarius_poison",
 	recipe = {
-		{"brewing:cortinarius_violaceus"},
-		{"brewing:jar"},
+		{"", "", ""},
+		{"", "brewing:cortinarius_violaceus", ""},
+		{"", "brewing:jar", ""}
 	}
 })
