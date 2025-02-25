@@ -3,50 +3,53 @@ local modpath, S = ...
 --Magic Wand
 
 minetest.register_craftitem("brewing:magic_wand", {
-	description = S("Magic Wand"),
-	wield_image = "magic_wand.png",
-	inventory_image = "magic_wand.png",
-	groups = {},
-	on_use = function (itemstack, user, pointed_thing)
-			if pointed_thing.type == "nothing" then
-				return
-			end
-				local user_pos = user:getpos()
-				user_pos.y = user_pos.y+0.5
+    description = S("Magic Wand"),
+    wield_image = "magic_wand.png",
+    inventory_image = "magic_wand.png",
+    groups = {},
+    on_use = function (itemstack, user, pointed_thing)
+        if pointed_thing.type ~= "node" then
+            return
+        end
 
-				local enemy_pos =  minetest.get_pointed_thing_position(pointed_thing, true)
+        local user_pos = user:getpos()
+        user_pos.y = user_pos.y + 0.5
 
-				enemy_pos.x = enemy_pos.x
-				enemy_pos.y = enemy_pos.y
+        local enemy_pos = minetest.get_pointed_thing_position(pointed_thing, true)
 
-				local vel = vector.multiply(vector.subtract(enemy_pos, user_pos), 1)
-				vel.y = vel.y + 0.6
+        local vel = vector.multiply(vector.subtract(enemy_pos, user_pos), 1)
+        vel.y = vel.y + 0.6
 
-				minetest.add_particlespawner({
-					amount = 5,
-					time = 1,
-					minpos = user_pos,
-					maxpos = enemy_pos,
-					minvel = {x=1, y=1, z=0},
-					maxvel = {x=1, y=1, z=0},
-					minacc = {x=1, y=1, z=1},
-					maxacc = {x=1, y=1, z=1},
-					minexptime = 1,
-					maxexptime = 1,
-					minsize = 1,
-					maxsize = 1,
-					collisiondetection = false,
-					vertical = false,
-					texture = "brewing_magic_particle.png",
-					playername = "singleplayer"
-				})
-			--Now put the magic rose seed
-			farming.place_seed (nil, user, pointed_thing, "brewing:seed_magic_rose")
-			brewing.magic_sound("to_player", user, "brewing_magic_sound")
-			if minetest.get_modpath("mana") ~= nil then
-				mana.subtract_up_to(user, brewing.settings.mana_magic_wand)
-			end
-	end,
+        minetest.add_particlespawner({
+            amount = 5,
+            time = 1,
+            minpos = user_pos,
+            maxpos = enemy_pos,
+            minvel = {x=1, y=1, z=0},
+            maxvel = {x=1, y=1, z=0},
+            minacc = {x=1, y=1, z=1},
+            maxacc = {x=1, y=1, z=1},
+            minexptime = 1,
+            maxexptime = 1,
+            minsize = 1,
+            maxsize = 1,
+            collisiondetection = false,
+            vertical = false,
+            texture = "brewing_magic_particle.png",
+            playername = "singleplayer"
+        })
+
+		local pos = minetest.get_pointed_thing_position(pointed_thing, true)
+        if not minetest.is_protected(pos, user:get_player_name()) then
+            farming.place_seed(itemstack, user, pointed_thing, "brewing:seed_magic_rose")
+        end
+
+        brewing.magic_sound("to_player", user, "brewing_magic_sound")
+
+        if minetest.get_modpath("mana") ~= nil then
+            mana.subtract_up_to(user, brewing.settings.mana_magic_wand)
+        end
+    end,
 })
 
 minetest.register_craft({

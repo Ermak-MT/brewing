@@ -63,9 +63,9 @@ minetest.register_node("brewing:magic_rose_vase", {
 	walkable = false,
 	groups = {cracky = 2, attached_node = 1},
 	drop = "brewing:magic_rose_vase",
-	--paramtype = "light",
+	paramtype = "light",
 	sunlight_propagates = false,
-	--light_source = LIGHT_MAX - 1,
+	light_source = 3,
 	sounds = default.node_sound_glass_defaults(),
 	inventory_image = "brewing_rose_vase.png",
 	selection_box = {
